@@ -1,0 +1,58 @@
+# Aplikacja mikroserwis
+
+1. Symfony 
+2. Vue
+3. Django rest
+
+### Start
+
+1. stworz siec lokalna przed uruchomienie kontenerów
+
+```
+docker network create monitor-net
+```
+
+2. Osobno kazdy serwis wchodzac po kolei do katalogow api_login/ itd.
+
+```
+cd api_login/
+
+docker compose up
+
+cd spa/ 
+cd api_product/
+```
+
+Uwaga: 
+
+po postawieniu kazdego serwisu wchodzimy do katalogu i osobno wykonujemy polecenia dodatkowe
+jak migracje czy tworzenie uzytkownika.
+
+### SPA - front
+
+Aplikacja oparta o Vue
+
+adres: localhost:8080
+
+### Api login - backend
+
+Api oparte o MVC Symfony 6 + JWT
+
+url-e:
+localhost/
+localhost/api/login - tworzenie tokena
+localhost/api/default - prosty response
+
+
+### Api Product - backend
+
+Api oparte o MVC Django Rest + weryfikacja JWT
+
+url-e:
+localhost:8000/ - widok dostepnych endpointow
+localhost:8000/admin - panel 
+
+
+
+
+

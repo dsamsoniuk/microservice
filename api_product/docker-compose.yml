@@ -1,0 +1,15 @@
+services:
+  apiproduct:
+    build:
+        context: .
+    container_name: apiproduct
+    volumes:
+      - .:/app  # Montowanie aplikacji z lokalnego folderu
+      - "~/.ssh:/root/.ssh"
+    ports:
+      - "8000:8000"   
+    networks:
+      - microservice-net
+networks:
+  microservice-net:
+    external: true
