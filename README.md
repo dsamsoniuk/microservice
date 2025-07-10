@@ -32,16 +32,16 @@ jak migracje czy tworzenie uzytkownika.
 
 Aplikacja oparta o Vue
 
-adres: localhost:8080
+* localhost:8080
 
 ### Api login - backend
 
 Api oparte o MVC Symfony 6 + JWT
 
 url-e:
-localhost/
-localhost/api/login - tworzenie tokena
-localhost/api/default - prosty response
+* localhost/
+* localhost/api/login - tworzenie tokena
+* localhost/api/default - prosty response
 
 
 ### Api Product - backend
@@ -49,8 +49,8 @@ localhost/api/default - prosty response
 Api oparte o MVC Django Rest + weryfikacja JWT
 
 url-e:
-localhost:8000/ - widok dostepnych endpointow
-localhost:8000/admin - panel 
+* localhost:8000/ - widok dostepnych endpointow
+* localhost:8000/admin - panel 
 
 
 
