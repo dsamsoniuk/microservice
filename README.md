@@ -9,7 +9,7 @@
 1. stworz siec lokalna przed uruchomienie kontenerów
 
 ```
-docker network create monitor-net
+docker network create microservice-net
 ```
 
 2. Osobno kazdy serwis wchodzac po kolei do katalogow api_login/ itd.
