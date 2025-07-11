@@ -8,11 +8,22 @@
 docker compose up
 # lub
 python manage.py runserver
+
 ```
 
 
-url admin panel:   localhost:8000/admin/
+
+### Stworz super uzytkownika
+
+```
+python manage.py createsuperuser
+```
+
 Super user account:  admin admin   -- admin@example.com
+
+Dostep pod adresem: localhost:8000/admin/
+
+
 
 
 ### Generate requirements file

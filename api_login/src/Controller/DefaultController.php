@@ -15,8 +15,8 @@ final class DefaultController extends AbstractController
             'message' => 'Welcome to your new controller!',
             'path' => 'src/Controller/DefaultController.php',
             'data' => [
-                ['id' => 1,'name'=> 'laptop xd<b>Ojj</b>', 'price' => 2334],
-                ['id' => 2,'name'=> 'laptop TTY<script>console.log("Ojoj")</script>', 'price' => 6555],
+                ['id' => 1,'name'=> 'laptop xd', 'price' => 2334],
+                ['id' => 2,'name'=> 'laptop TTY', 'price' => 6555],
                 ['id' => 3,'name'=> 'PC TTY', 'price' => 5556],
             ]
         ]);
