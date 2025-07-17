@@ -61,6 +61,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "migration-with-data": [
+            "php bin/console doctrine:migrations:migrate",
+            "php bin/console doctrine:fixtures:load"
         ]
     },
     "conflict": {

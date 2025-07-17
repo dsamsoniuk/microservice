@@ -1,15 +1,33 @@
 # Api LOGIN
+=============
 
-# Install
+## Start server
 
 ```
 docker compose up
-
-php bin/console doctrine:migrations:migrate
-php bin/console doctrine:fixtures:load
 ```
 
-### Get Token JWT
+### Load fixture and migration
+
+```
+composer run migration-with-data
+```
+
+#### Database login/password add 
+
+```
+php bin/console secrets:set DB_LOGIN
+php bin/console secrets:set DB_PASSWD
+```
+
+#### Login data
+
+login: damian@poczta.pl 
+haslo: damian
+
+
+## Get Token JWT - Example
+================================
 
 REQUEST
 
