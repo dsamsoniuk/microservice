@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
-    <h3>HOME</h3>
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="home text-left">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <h3>Notatki</h3>
+    <hr>
+    <button class="btn btn-primary m-1" @click="fetchData">Pobierz notatki</button>
+
     <br>
-    <div class="aler alert-info" v-if="message">{{ message }}</div>
+    <div class="aler alert-info m-2 p-2" v-if="message">{{ message }}</div>
+
     <br>
-    <button class="btn btn-primary m-1" @click="fetchData">Pobierz dane z default</button>
-    <br>
-    <table class="table">
+    <table class="table text-left">
       <tr v-for="item in items" v-bind:key="item.id">
           <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.price }}</td>
+          <td>{{ item.content }}</td>
       </tr>
     </table>
 
@@ -20,11 +20,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+
 import LoginApi from "@/utils/LoginApi"
-// import Session from "@/utils/Session"
-// import axios from "axios"
 
 export default {
   name: 'HomeView',
@@ -39,10 +36,6 @@ export default {
   },
   methods: {
    async fetchData(){
-
-      // var response = await axios.get('/api-login/', { });
-      // // var response = await axios.get('/api-login/', { });
-      // console.log(response)
 
       var login = new LoginApi()
       var response = await login.get('/api-login/api/default')

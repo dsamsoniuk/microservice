@@ -1,5 +1,7 @@
 # Aplikacja mikroserwis
 
+Zestaw mikroserwisów składający się z aplikacji REST API zbudowanych w Symfony oraz Django, a także jednostronicowej aplikacji (SPA) opartej na Vue.js. Projekt stanowi przykład integracji niezależnych serwisów w spójną, skalowalną architekturę, przy jednoczesnym zachowaniu separacji odpowiedzialności każdego z komponentów.
+
 1. Symfony 
 2. Vue
 3. Django rest

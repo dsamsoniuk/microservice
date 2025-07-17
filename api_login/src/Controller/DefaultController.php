@@ -25,7 +25,7 @@ final class DefaultController extends AbstractController
         }
 
         return $this->json([
-            'message'   => 'Default message - welcome',
+            'message'   => 'Pobrano notatki użytkownika',
             'data'      => $notes
         ]);
     }

@@ -13,21 +13,15 @@
       </tr>
     </table>
 
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+
 import LoginApi from "@/utils/LoginApi"
-// import Session from "@/utils/Session"
 
 export default {
   name: 'HomeView',
-  components: {
-    // HelloWorld
-  },
   data() {
     return {
       message: "",
@@ -37,7 +31,7 @@ export default {
   methods: {
    async fetchData(){
       var login = new LoginApi()
-      var response = await login.get('/api-product/api/static-products/')
+      var response = await login.get('/api-product/static-products/')
       if (response === false) {
         this.message = "Nie udalo sie pobrac danych. Sprawdz token"
       } else {

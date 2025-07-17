@@ -1,15 +1,21 @@
 # app
 
+
 Bootstrap - Vue
 https://bootstrap-vue.org/docs/
 
 
-
-
------- Run in docker
+## Start server 
+=========
 
 ```
 docker compose up
+```
+
+#### Install
+
+```
+npm install
 ```
 
 #### rebuild changes
@@ -17,14 +23,6 @@ docker compose up
 ```
 npm run build
 npm run watch
-```
-
-
------- Run without Docker
-
-## Project setup
-```
-npm install
 ```
 
 ### Compiles and hot-reloads for development
