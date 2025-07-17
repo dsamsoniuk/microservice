@@ -21,8 +21,8 @@ cd api_login/
 
 docker compose up
 
-cd spa/ 
 cd api_product/
+cd spa/ 
 ```
 
 Uwaga: 
