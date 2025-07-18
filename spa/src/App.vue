@@ -7,6 +7,8 @@
         <div class="row">
           <div class="col-sm-12 p-3">
               <h3>Microservice@2025</h3><hr>
+              <LoginBanner />
+
           </div>
         </div>
 
@@ -28,21 +30,32 @@
 
       </div>
       <div class="col-sm-8 pt-4">
-          <router-view/>
+            <router-view/>
+
       </div>
     </div>
 
-        <!-- <LoginBanner /> -->
 
   </div>
 </template>
 <script>
-// import LoginBanner from './components/LoginBanner.vue';
+import LoginBanner from './components/LoginBanner.vue';
+// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  components: {
-    // LoginBanner
+  data() {
+    return {
+      message: "",
+    }
   },
+  components: {
+    LoginBanner
+  },
+  methods: {
+     changeMsg(){
+      this.message = "jjja"
+    },
+  }
 }
 
 </script>

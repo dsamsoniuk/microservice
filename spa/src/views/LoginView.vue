@@ -1,10 +1,13 @@
 <template>
-  <div class="login">
-
-   <p> User: {{ username }}</p>
-   <p> message: {{ message }}</p>
-  <hr>
-  <h3>Panel logowania</h3>
+  <div class="login ">
+    <div class="text-left">
+        <h3>Panel logowania</h3>
+    </div>
+    
+    <hr>
+    <div class="alert alert-info" v-if="message">
+      {{ message }}
+    </div>
     <div class="row">
       <div class="col-sm-12 col-md-4"></div>
       <div class="col-sm-12 col-md-4">
@@ -20,19 +23,16 @@
 
             <button type="submit" class="btn btn-primary m-1">Zaloguj się</button>
           </form>
-          <button @click="logout" v-if="username != ''" class="btn btn-warning m-1">Logout</button>
       </div>
       <div class="col-sm-12 col-md-4"></div>
 
     </div>
-
-
-
 </div>
 </template>
 
 <script>
 import LoginApi from "@/utils/LoginApi"
+import { EventBus } from '../event-bus.js'
 
 export default {
   name: 'LoginView',
@@ -47,22 +47,8 @@ export default {
       },
     }
   },
-  mounted(){
-    var login = new LoginApi()
-    var token = sessionStorage.getItem('api_login_token')
-    var payload = login.getTokenPayload(token)
-
-    if (payload.username && login.isTokenExpired(token) === false) {
-        this.username = payload.username
-    } else {
-        this.username = ''
-    }
-  },
   methods: {
-    logout(){
-        sessionStorage.setItem('api_login_token','')
-        this.username = ''
-    },
+
     async submitForm() {
       var form = this.form
 
@@ -71,7 +57,8 @@ export default {
           var isRefreshed = await login.refreshToken(form.username, form.password)
           if (isRefreshed) {
             this.message = `Zalogowano jako ${form.username}`;
-            this.$router.push('/')
+            EventBus.$emit('refresh-panel')
+            // this.$router.push('/')
           } else {
               this.message = 'Nie udalo sie zaktualizowac tokena';
           }

@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>HELLOWORLD</h1>
+   <h3>{{ msg }}</h3>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -12,20 +13,30 @@
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
     </ul>
 
-
   </div>
 </template>
 
 <script>
-
+import { EventBus } from '../event-bus.js'
 
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      msg: "",
+    }
   },
-  // sessionStorage.setItem('zhc_db_art_cache', JSON.stringify(cacheData));
-
+  props: {
+    message: String
+  },
+  mounted() {
+    EventBus.$on('run-hello-method', this.helloMethod)
+  },
+   methods: {
+    helloMethod() {
+      this.msg = "HelloMetoda"
+    }
+  },
 }
 </script>
 

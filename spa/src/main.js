@@ -8,6 +8,8 @@ import VueCookies from 'vue-cookies'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+export const EventBus = new Vue()
+
 Vue.config.productionTip = false
 Vue.use(VueCookies, { expires: '7d'})
 
