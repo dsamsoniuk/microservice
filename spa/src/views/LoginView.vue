@@ -1,9 +1,9 @@
 <template>
   <div class="login ">
     <div class="text-left">
-        <h3>Panel logowania</h3>
+        <h3>Panel logowania - api symfony</h3>
     </div>
-    
+
     <hr>
     <div class="alert alert-info" v-if="message">
       {{ message }}

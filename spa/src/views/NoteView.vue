@@ -1,7 +1,7 @@
 <template>
   <div class="home text-left">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h3>Notatki</h3>
+    <h3>Notatki - api symfony</h3>
     <hr>
     <button class="btn btn-primary m-1" @click="fetchData">Pobierz notatki</button>
 
