@@ -31,7 +31,6 @@ class UserViewSet(viewsets.ModelViewSet):
     # permission_classes = [permissions.IsAuthenticated] # wersja weryfikujaca przez autoryzacje sessji 
     permission_classes = [HasValidTokenOrAtuh]
 
-
 class GroupViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
@@ -39,7 +38,6 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all().order_by('name')
     serializer_class = GroupSerializer
     permission_classes = [HasValidTokenOrAtuh]
-
 
 class ProductViewSet(viewsets.ModelViewSet):
     """
@@ -54,6 +52,11 @@ class StaticProductListView(APIView):
     API endpoint that allows see list products
     """
     permission_classes = [HasValidTokenOrAtuh]
+
+
+# TODO: 
+# * pobieranie z bazy danych
+# * dodac fixture
 
     def get(self, request):
         data = [
