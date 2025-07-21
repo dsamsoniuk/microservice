@@ -13,7 +13,9 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
 RUN apt-get update && apt-get install -y software-properties-common npm
 RUN npm install npm@10.8.2 -g &&  npm install n -g 
 
-RUN apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y wget
+
+#RUN apt-get install -y ffmpeg
 
 RUN apt-get -y update \
 && apt-get install -y libicu-dev \
