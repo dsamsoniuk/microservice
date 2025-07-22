@@ -18,7 +18,7 @@ public function default(ApiLoginInterface $apiLogin): Response
         );
         $apiLogin->setCreditionals($creditionals);
 
-        $response = $apiLogin->makeRequest('POST', '/default');
+        $response = $apiLogin->makeRequest('POST', '/default', ['json' => []]);
     } catch (\Exception $e) {
         // $this->addFlash('error', $e->getMessage());
         return $this->json(['error' => $e->getMessage()]);

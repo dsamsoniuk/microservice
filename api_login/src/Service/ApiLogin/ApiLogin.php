@@ -19,11 +19,13 @@ class ApiLogin implements ApiLoginInterface {
             throw new ApiLoginException("No creditionals");
         }
 
-        if (!isset($params["query"])) {
-            $params["query"] = [];
-        }
-
-        $params["query"]["token"] = $this->apiLoginAccess->getCurrentToken();
+        $params = [
+            'headers' => [
+                'Authorization' => "Bearer {$this->apiLoginAccess->getCurrentToken()}",
+                'Content-Type' => 'application/json',
+            ],
+            // 'auth_bearer' => $this->apiLoginAccess->getCurrentToken(),
+        ];
 
         $response = $this->httpClient->request($method,"{$this->creditionals->url}{$url}", $params);
 

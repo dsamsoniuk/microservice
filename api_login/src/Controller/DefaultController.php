@@ -62,32 +62,24 @@ final class DefaultController extends AbstractController
         ]);
     }
     
-    #[Route('/test', name: 'app_default_def')]
-    public function tt(ApiLoginInterface $apiLogin,  HttpClientInterface $httpClient)
-    {
-        // return $this->json(['asds']);
-        // $response = $httpClient->request("GET","http://localhost/");
-        // $statusCode = $response->getStatusCode();
-        // $content = $response->getContent();
-        // dump($response->getContent());
-        // die;
+    // #[Route('/default', name: 'app_default', methods: ['GET', 'POST'])]
+    // public function default(ApiLoginInterface $apiLogin,  HttpClientInterface $httpClient): Response
+    // {
+    //     try {
+    //         $creditionals = new ApiLoginCreditionals(
+    //             $this->getParameter('secret_apilogin_password'), 
+    //             $this->getParameter('secret_apilogin_username'),
+    //             "https://4252b4e560f8.ngrok-free.app/api"
+    //         );
+    //         $apiLogin->setCreditionals($creditionals);
 
-        try {
-            // Example API LOGIN 
-            $creditionals = new ApiLoginCreditionals(
-                $this->getParameter('secret_apilogin_password'), 
-                $this->getParameter('secret_apilogin_username'),
-                "http://172.25.0.3/api"
-            );
-            $apiLogin->setCreditionals($creditionals);
+    //         $response = $apiLogin->makeRequest('GET', '/default');
+    //         return $this->json(['response' => $response]);
 
-            $response = $apiLogin->makeRequest('POST', '/default');
-        } catch (\Exception $e) {
-            // $this->addFlash('error', $e->getMessage());
-            return $this->json(['error' => $e->getMessage()]);
-        }
-        return $this->json(['default']);
-    }
-    
+    //     } catch (\Exception $e) {
+    //         // $this->addFlash('error', $e->getMessage());
+    //         return $this->json(['error' => $e->getMessage()]);
+    //     }
+    // }
     
 }

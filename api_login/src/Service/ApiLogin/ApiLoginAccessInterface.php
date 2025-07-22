@@ -7,5 +7,5 @@ interface ApiLoginAccessInterface {
     public function getCurrentToken(): string; // 
     public function getToken(): string|null; // pobierz z cache
     public function setToken(string $token): void; // zapis w cache
-    public function refreshToken(): void; // osobno request do api 
+    public function refreshToken(): bool; // osobno request do api 
 }

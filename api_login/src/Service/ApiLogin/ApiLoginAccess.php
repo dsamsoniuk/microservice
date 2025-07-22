@@ -21,8 +21,7 @@ class ApiLoginAccess implements ApiLoginAccessInterface {
 
         $token = $this->getToken();
 
-        if ($token === null) {
-            $this->refreshToken();
+        if ($token === null && $this->refreshToken()) {
             $token = $this->getToken();
         }
         if ($token === null) {
@@ -49,24 +48,24 @@ class ApiLoginAccess implements ApiLoginAccessInterface {
         $this->cache->save($item);
     }
 
-    public function refreshToken(): void {
+    public function refreshToken(): bool {
 
         $response = $this->httpClient->request("POST","{$this->creditionals->url}/login", [
-           'body' => [
+           'json' => [
                 'username' => $this->creditionals->username,
                 'password' => $this->creditionals->password,
            ]
         ]);
 
         if ($response->getStatusCode() !== 200) {
-            throw new ApiLoginException($response->getInfo());
+            throw new ApiLoginException($response->getContent());
         }
 
         $content = $response->toArray();
 
         if (isset($content["token"])) {
             $this->setToken($content["token"]);
-
+            return true;
         } else if (isset($content["message"])) {
             throw new ApiLoginException($content["message"]);
         }
