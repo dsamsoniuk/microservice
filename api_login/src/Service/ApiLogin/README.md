@@ -4,7 +4,7 @@ Przykład serwisu integrującego Api login do innego serwisu lub witryny
 
 ## Przykład wywołania api
 
-```
+```php
 use App\Service\ApiLogin\ApiLoginInterface;
 
 #[Route('/default', name: 'app_default', methods: ['GET', 'POST'])]
